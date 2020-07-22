@@ -1,0 +1,19 @@
+<div class="loginpage">
+    <div class="logincontent" [ngStyle]="{'height':displayHeight,'width':displayWidth,'left':displayLeft}">
+        <div class="logindetail" [ngStyle]="{'height':displayHeight,'width':loginBlockWidth}">
+            <img class="loginLogo" [src]="logoUrl"/>
+            <p class="signIn">Sign In</p>
+            <p class="credentials">Enter your credentials to proceed</p>
+            <p class="email">USER ID</p>
+            <input class="emailText" name="emailModel" #emailModel="ngModel" [(ngModel)]="emailTxt" type="email">
+            <p class="password">PASSWORD</p>
+            <a class="forgot">Forgot password?</a>
+            <input class="passwordText" [(ngModel)]="passwordTxt" type="password">
+            <p class="errorMsg">{{errorTxt}}</p>
+            <button class="signinbutton" *ngIf="!isLoading" (click)="Submit()">SIGN IN</button>
+            <div class="loader" *ngIf="isLoading"></div>
+            <p class="sighup">Don't have account? <a class="signupBtn">Sign Up</a></p>
+        </div>
+        <img class="viewImage" [src]="viewUrl" [ngStyle]="{'height':displayHeight,'width':displayHeight}"/>
+    </div>
+</div>

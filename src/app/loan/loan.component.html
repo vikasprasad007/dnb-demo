@@ -1,0 +1,86 @@
+<div class="loanView">
+  <div class="loanHeaderView" [ngStyle]="{'background-image':'url(/assets/blue_bg.png)'}">
+    <marquee class="accountActivateView" scrollamount="12" direction="right" *ngIf="activationMsg != ''">
+      {{activationMsg}}
+    </marquee>
+    <p class="loanTxt">LOANS</p>
+    <p class="loanDetail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+      Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+      galley of type and scrambled it to make a type specimen book.</p>
+  </div>
+  <div class="loanBody">
+    <div class="loanContentHeader">
+      <p class="contentLoanTxt">LOANS</p>
+      <button class="contentLoanBtn" (click)="applyForLoan()">APPLY NOW</button>
+    </div>
+    <div class="loanContentBody">
+      <div class="loanPresentation">
+        <p class="threeStepTxt">Instant loan in 3 steps</p>
+        <img [src]="presentImgUrl1" class="presentImg1" />
+        <p class="presentTxt1">Customize your loan with range options</p>
+        <img [src]="presentImgUrl2" class="presentImg2" />
+        <p class="presentTxt2">Complete your application</p>
+        <img [src]="presentImgUrl3" class="presentImg3" />
+        <p class="presentTxt3">Instant approval</p>
+      </div>
+      <table class="loanListTable" *ngIf="loanListData.length != 0">
+        <thead>
+          <tr>
+            <td style="width:2%;"></td>
+            <td style="width:14%;">
+              Loan Req. ID
+            </td>
+            <td style="width:14%;">
+              Loan Account ID
+            </td>
+            <td style="width:14%;">
+              Amount (USD)
+            </td>
+            <td style="width:14%;">
+              Terms (Years)
+            </td>
+            <td style="width:14%;">
+              Current EMI (USD)
+            </td>
+            <td style="width:14%;">
+              Interest Rate (%)
+            </td>
+            <td style="width:14%;">
+              Status
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of loanListData">
+            <td style="width:2%;"></td>
+            <td style="width:14%;">
+              {{item.loanRequestId}}
+            </td>
+            <td style="width:14%;">
+              {{item.loanAcctId}}
+            </td>
+            <td style="width:14%;">
+              {{item.loanAmt}}
+            </td>
+            <td style="width:14%;">
+              {{item.tenure}}
+            </td>
+            <td style="width:14%;">
+              {{item.loanAmt / item.tenure | number: '1.2-2'}}
+            </td>
+            <td style="width:14%;">
+              10.15
+            </td>
+            <td style="width:14%;">
+              {{item.status}}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="applyLoanBtn" *ngIf="loanListData.length == 0" (click)="applyForLoan()">APPLY NOW</button>
+    
+    </div>
+  </div>
+</div>
+
+<!-- pending loan tenture, loan balance, currrent emi, intrest rate  -->

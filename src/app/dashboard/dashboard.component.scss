@@ -1,0 +1,1038 @@
+.dashboardParentView{
+    position: absolute;
+    top:0;
+    left: 0;
+    right: 0;
+    background-color: #f1f2f7;
+}
+
+.accountView{
+    position: relative;
+    top:20px;
+    left: 5%;
+    height: 200px;
+    width: 60%;
+    background-color: #ffffff;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+}
+
+.accountBalanceView{
+    position: absolute;
+    top:0px;
+    left: 0;
+    width: 50%;
+    height: 130px;
+    border-top-left-radius: 5px;
+    background-image: url("/assets/acc_info.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.creditView{
+    position: absolute;
+    top:0px;
+    left: 50%;
+    width: 50%;
+    height: 130px;
+    border-top-right-radius: 5px;
+    background-image: url("/assets/acc_info1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.accHolderName{
+    position: relative;
+    top:5px;
+    left: 20px;
+    font-size: 20px;
+    color: #ffffff;
+}
+
+.accNumberTxt{
+    position: relative;
+    top: 5px;
+    left: 20px;
+    font-size: 12px;
+    color: #ffffff;
+    //font-weight: bold;
+}
+
+.accountNumberVal{
+    position: relative;
+    top: -15px;
+    left: 20px;
+    font-size: 22px;
+    color: #ffffff;
+}
+
+.accBalanceTxt{
+    position: relative;
+    top: 5px;
+    left: 20px;
+    font-size: 12px;
+    color: #000000;
+    //font-weight: bold;
+}
+
+.accBalanceAmt{
+    position: relative;
+    top: -15px;
+    left: 20px;
+    font-size: 22px;
+    color: #000000;
+}
+
+.creditTxt{
+    position: relative;
+    top: -25px;
+    left: 20px;
+    font-size: 12px;
+    color: #000000;
+    //font-weight: bold;
+}
+
+.creditAmt{
+    position: relative;
+    top: -45px;
+    left: 20px;
+    font-size: 22px;
+    color: #000000;
+}
+
+.limitTxt{
+    position: relative;
+    top:0px;
+    left:20px;
+    font-size: 11px;
+    color: #828283;
+}
+
+.atmView{
+    position: absolute;
+    top:130px;
+    left: 0%;
+    width: 100%;
+    height: 70px;
+}
+.atm-undorederedlist{
+    position: relative;
+    //left: 5%;
+    top: 2px;
+    list-style-type: none;
+    //margin-left: 5%;
+    padding: 0;
+    overflow: hidden;
+}
+.atm-undorederedlist > li {
+    float: left;
+  }
+  
+  .atm-undorederedlist > li a {
+    display: block;
+    color: #000000;
+    text-align: center;
+    padding: 10px 0px;
+    margin-left: 54px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+
+  .atm-undorederedlist > li a > img{
+      position: relative;
+      top:-10px;
+  }
+
+  .trip{
+    height: 14px;
+    width: 115px;
+    background-color: #e22121;
+    border-radius: 20px;
+  }
+
+.visaCardView{
+    position: absolute;
+    top:18px;
+    //left: 0;
+    right: 5%;
+    width: 28%;
+    height: 200px;
+}
+.visaCardImage{
+    position: absolute;
+    top:0px;
+    left: 0;
+    width: 100%;
+    height: 211px;
+}
+
+.accountNumber{
+    position: absolute;
+    top:75px;
+    left:10%;
+    font-size: 22px;
+    color: #ffffff;
+    word-spacing: 18px;
+    letter-spacing: 1px;
+}
+
+.cardHolderNameTxt{
+    position: absolute;
+    top: 140px;
+    left: 10%;
+    font-size: 8px;
+    color: #ffffff;
+}
+
+.cardHolderName{
+    position: absolute;
+    top: 150px;
+    left: 10%;
+    width: 65%;
+    height: 18px;
+    font-size: 16px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.expiryTxt{
+    position: absolute;
+    top: 140px;
+    right: 10%;
+    font-size: 8px;
+    color: #ffffff;
+}
+
+.expiry{
+    position: absolute;
+    top: 150px;
+    right: 10%;
+    height: 18px;
+    font-size: 16px;
+    color: #ffffff;
+    overflow: hidden;
+}
+
+.sendMoneyView{
+    position: absolute;
+    top:710px;
+    left: 5%;
+    width: 29%;
+    height: 110px;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+    background-color: #ffffff;
+}
+
+.sendMoneyTxt{
+    position: relative;
+    top:10px;
+    left: 20px;
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+}
+
+.receiverViewParent{
+    position: relative;
+    top:16px;
+    left: 5%;
+    right: 10px;
+    width: 90%;
+    height: 30px;
+    overflow: hidden;
+}
+
+.receiverView{
+    margin-left: 10px;
+    display: inline;
+}
+
+.receiverImg{
+    //left: 10px;
+    height: 30px;
+    width: 30px;
+    border-radius: 15Px;
+}
+
+.exchangeView{
+    position: absolute;
+    top:830px;
+    left: 5%;
+    width: 29%;
+    height: 295px;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+    background-color: #ffffff;
+}
+
+.exchangeFromView{
+    position: absolute;
+    top:60px;
+    left: 5%;
+    width: 90%;
+    border-bottom: solid 1px #e7e7e7;
+}
+
+.exchangeFromValue{
+    position: absolute;
+    top:95px;
+    left: 5%;
+    width: 90%;
+    height: 28px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    border-color: transparent;
+    border-bottom: solid 1px #e7e7e7;
+}
+
+.youget{
+    position: absolute;
+    top:132px;
+    left: 20px;
+    font-size: 10px;
+    color: grey;
+}
+
+.exchangeYourView{
+    position: absolute;
+    top:160px;
+    left: 5%;
+    width: 90%;
+    border-bottom: solid 1px #e7e7e7;
+}
+
+.exchangeYourValue{
+    position: absolute;
+    top:195px;
+    left: 5%;
+    width: 90%;
+    height: 28px;
+    font-size: 16px;
+    letter-spacing: 1px;
+    background-color: transparent;
+    border-color: transparent;
+    border-bottom: solid 1px #e7e7e7;
+}
+
+.currentExchangeRateTxt{
+    position: absolute;
+    top:240px;
+    left: 20px;
+    font-size: 9px;
+    color: grey;
+}
+
+.currentExchangeRate{
+    position: absolute;
+    top:250px;
+    left: 20px;
+    font-size: 11px;
+    color: #000000;
+}
+
+.serviceTaxTxt{
+    position: absolute;
+    top:240px;
+    left: 40%;
+    font-size: 9px;
+    color: grey;
+}
+
+.serviceTax{
+    position: absolute;
+    top:250px;
+    left: 40%;
+    font-size: 11px;
+    color: #000000;
+}
+
+.exchangebutton{
+    position: absolute;
+    top: 245px;
+    right: 5%;
+    height: 32px;
+    font-size: 14px;
+    background-color: #519EDC;
+    width: 100px;
+    border-radius: 4px;
+    color: #ffffff;
+    border-color: transparent;
+}
+
+.exchangeFromView > select, .exchangeYourView > select{
+    width: 100%;
+    border-color: transparent;
+}
+
+.exchangeFromView > select > img, .exchangeYourView > select > img{
+    position: absolute;
+    right: 5%;
+    height: 20px;
+    width: 20px;
+}
+
+.summaryView{
+    position: absolute;
+    top:710px;
+    right: 35%;
+    height: 403px;
+    width: 29%;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+    background-color: #ffffff;
+}
+
+.summaryOption{
+    position: absolute;
+    top:18px;
+    right: 20px;
+}
+
+.summaryOption > select{
+    font-size: 11px;
+    color: grey;
+    height: 24px;
+    width: 70px;
+    border-radius: 3px;
+    border: solid 1px #e7e7e7;
+}
+
+.summaryChartView{
+    position: absolute;
+    top: 50px;
+    left: 9%;
+    height: 300px;
+    width: 300px;
+}
+
+.showAllSummery{
+    position: absolute;
+    bottom: 30px;
+    left: 44%;
+    text-decoration: none;
+    color:#e22121;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.expensesTxt{
+    position: absolute;
+    top: 115px;
+    left: 0%;
+    width: 100%;
+    font-size: 12px;
+    text-align: center;
+}
+
+.expenses{
+    position: absolute;
+    top: 130px;
+    left: 0%;
+    width: 100%;
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.chart{
+    position: relative;
+    top:0px;
+    right: 0;
+    height: 200px;
+    width: 200px;
+}
+
+.myFavouriteView{
+    position: absolute;
+    top:710px;
+    right: 5%;
+    height: 220px;
+    width: 28%;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+    background-color: #ffffff;
+}
+
+.electricityImage,.internetImage,.insuranceImage,.waterImage{
+    position: absolute;
+    //top:70px;
+    //left: 8%;
+    height: 40px;
+    width: 40px;
+}
+
+.electricityImage,.internetImage{
+    top:70px;
+}
+
+.insuranceImage,.waterImage{
+    top:140px;
+}
+
+.electricityImage,.insuranceImage{
+    left:8%;
+}
+
+.internetImage,.waterImage{
+    left:50%;
+}
+
+.electricityValue,.internetValue,.insuranceValue,.waterValue{
+    position: absolute;
+    //top:60px;
+    //left: 23%;
+    font-size: 16px;
+    font-weight: bold;
+    color:#000000;
+}
+
+.electricityValue,.internetValue{
+    top:70px;
+}
+
+.insuranceValue,.waterValue{
+    top:140px;
+}
+
+.electricity,.internet,.insurance,.water{
+    position: absolute;
+    top:85px;
+    //left: 23%;
+    font-size: 11px;
+    color:grey;
+}
+
+.electricity,.internet{
+    top:95px;
+}
+
+.insurance,.water{
+    top:165px;
+}
+
+.electricity,.insurance, .electricityValue,.insuranceValue{
+    left:23%;
+}
+
+.internet,.water,.internetValue,.waterValue{
+    left:65%;
+}
+
+.accStatementView{
+    position: absolute;
+    top:933px;
+    right: 5%;
+    height: 180px;
+    width: 28%;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+    background-color: #ffffff;
+}
+
+.accStstementMore{
+    position: absolute;
+    font-size: 11px;
+    right: 8%;
+    top: 40px;
+    color: blue;
+    text-decoration: none;
+}
+
+.accStatementSwitch{
+    position: absolute;
+    top:70px;
+    left: 25%;
+    height: 28px;
+    width: 50%;
+    border-radius: 8px;
+    border: solid 1px #ffb3b3;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.accStatementSwitchAccount{
+    position: absolute;
+    font-size: 11px;
+    height: 28px;
+    width: 50%;
+    left: 0;
+    color: #ffb3b3;
+    background-color: #FCE4F6;
+    text-decoration: none;
+}
+
+.accStatementSwitchCredit{
+    position: absolute;
+    font-size: 11px;
+    height: 28px;
+    width: 50%;
+    left: 50%;
+    color: #000000;
+    background-color: #ffffff;
+    text-decoration: none;
+}
+
+.accStatementSwitchAccount>span, .accStatementSwitchCredit>span{
+    position: relative;
+    top: 7px;
+    left: 28%;
+}
+
+.accStatementImage{
+    position: absolute;
+    top:120px;
+    left: 8%;
+    height: 32px;
+    width: 32px;
+}
+
+.accStatementValue{
+    position: absolute;
+    top:120px;
+    left: 21%;
+    font-size: 12px;
+    font-weight: bold;
+    color:#000000;
+    width: 55%;
+    height: 18px;
+    overflow: hidden;
+}
+  
+.accStatement{
+    position: absolute;
+    top:138px;
+    left: 21%;
+    font-size: 11px;
+    color:grey;
+}
+
+.statementDownloadImage{
+    position: absolute;
+    top:120px;
+    right: 8%;
+    height: 32px;
+    width: 32px;
+}
+
+.mobileBankingView{
+    position: absolute;
+    top:560px;
+    left: 5%;
+    width: 60%;
+    height: 130px;
+    border-radius: 5px;
+    background-color: #362A7B;
+}
+
+.mobileBankingTxt{
+    position: absolute;
+    top:35px;
+    left: 20px;
+    width: 45%;
+    font-size: 11px;
+    color:#EBF0F0;
+}
+
+.mobileBankingMore{
+    position: absolute;
+    top:100px;
+    left: 20px;
+    font-size: 11px;
+    color:#ffffff;
+    text-decoration: none;
+}
+
+.mobileBankingMoreImage{
+    position: absolute;
+    top:-10px;
+    right: 5px;
+    //width: 165px;
+    height: 140px;
+}
+
+.cloudBankingMoreImage{
+    position: absolute;
+    top:-5px;
+    right: 5px;
+    //width: 165px;
+    height: 135px;
+}
+
+.cloudBankingView{
+    position: absolute;
+    top:560px;
+    right: 5%;
+    width: 28%;
+    height: 130px;
+    border-radius: 5px;
+    background-color: #6CD7D4;
+}
+
+.cloudBankingTxt{
+    position: absolute;
+    top:35px;
+    left: 20px;
+    width: 30%;
+    font-size: 11px;
+    color:#EBF0F0;
+}
+
+.loanView{
+    position: absolute;
+    top:240px;
+    left: 5%;
+    width: 29%;
+    height: 295px;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+    background-color: #ffffff;
+}
+
+.ongoingLoanImg{
+    position: absolute;
+    top:15px;
+    left: 5%;
+    height: 45px;
+}
+
+.ongoingLoanCount{
+    position: absolute;
+    top:0px;
+    left: 25%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.ongoingLoanTxt{
+    position: absolute;
+    top:35px;
+    left: 25%;
+    font-size: 12px;
+}
+
+.topSeperator{
+    position: absolute;
+    top:75px;
+    left: 4%;
+    width: 92%;
+    height: 1px;
+    background-color: #e7e7e7;
+}
+
+.approvalLoanImg{
+    position: absolute;
+    top:90px;
+    left: 5%;
+    height: 45px;
+}
+
+.approvalLoanCount{
+    position: absolute;
+    top:75px;
+    left: 25%;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.approvalLoanTxt{
+    position: absolute;
+    top:110px;
+    left: 25%;
+    font-size: 12px;
+}
+
+.secondSeperator{
+    position: absolute;
+    top:150px;
+    left: 4%;
+    width: 92%;
+    height: 1px;
+    background-color: #e7e7e7;
+}
+
+.upcomingEmiImg{
+    position: absolute;
+    top:165px;
+    left: 5%;
+    height: 45px;
+}
+
+.upcomingEmiCount{
+    position: absolute;
+    top:150px;
+    left: 25%;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.upcomingEmiTxt{
+    position: absolute;
+    top:185px;
+    left: 25%;
+    font-size: 12px;
+}
+
+.thirdSeperator{
+    position: absolute;
+    top:225px;
+    left: 4%;
+    width: 92%;
+    height: 1px;
+    background-color: #e7e7e7;
+}
+
+.applyNewLoanTxt{
+    position: absolute;
+    top:240px;
+    left: 5%;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.applyNewLoanbutton{
+    position: absolute;
+    top: 243px;
+    right: 5%;
+    height: 32px;
+    font-size: 14px;
+    background-color: #519EDC;
+    width: 110px;
+    border-radius: 16px;
+    color: #ffffff;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.transactionView{
+    position: absolute;
+    top:240px;
+    right: 5%;
+    width: 59%;
+    height: 295px;
+    border-radius: 5px;
+    border: solid 1px #e7e7e7;
+    background-color: #ffffff;
+}
+
+.typeFilterView{
+    position: absolute;
+    left:20px;
+    top:50px;
+    height: 16px;
+}
+
+.dateFilterView{
+    position: absolute;
+    left:180px;
+    top:50px;
+    height: 16px;
+    width: 100%;
+}
+
+.dateFilterView > img, .typeFilterView > img{
+    position: absolute;
+    left:0px;
+    top:2px;
+    height: 14px;
+}
+
+.typeFilterView > span{
+    position: absolute;
+    left:20px;
+    top:3px;
+    height: 20px;
+    font-size: 10px;
+    color:grey;
+}
+
+.dateFilterView > input{
+    position: absolute;
+    left:20px;
+    top:0px;
+    height: 16px;
+    font-size: 10px;
+    color:grey;
+}
+
+.dateFilterView > select, .typeFilterView > select{
+    position: absolute;
+    left:50px;
+    top:-2px;
+    height: 20px;
+    font-size: 10px;
+    //width: 60px;
+    border-color: transparent;
+}
+
+.transactionsearch{
+    position: absolute;
+    right:3%;
+    top:48px;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+
+.transactionTable{
+    position: absolute;
+    top:80px;
+    //right: 8%;
+    left: 3%;
+    width: 94%;
+    //height: 220px;
+    font-size: 12px;
+}
+
+.transactionTable, .transactionTable>tr {
+    // border-top: 1px solid #e7e7e7;
+    // border-bottom: 1px solid #e7e7e7;
+    // border-collapse: collapse;
+    height: 30px;
+  }
+
+  .transactionTable>thead {
+      background-color: #6CD7D4;
+  }
+
+  thead > tr, tbody > tr {
+      height: 30px;
+      display: table;
+    width: 100%;
+    table-layout: fixed;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  tbody > tr > td{
+      height: 30px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+  }
+
+  tbody{
+    display: block;
+    max-height: 170px;
+    overflow-y: scroll;
+  }
+
+.upcomingView{
+    position: absolute;
+    top:1145px;
+    left: 5%;
+    width: 90%;
+    height: 170px;
+}
+
+.upcomingTxt{
+    position: absolute;
+    top:0px;
+    left: 0px;
+    font-size: 12px;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.upcomingMore{
+    position: absolute;
+    top:0px;
+    right: 0px;
+    font-size: 12px;
+    color: #e22121;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.upcomingPaymentView{
+    position: absolute;
+    top:35px;
+    left: 0%;
+    width: 100%;
+    height: 130px;
+    overflow: hidden;
+    overflow-x: scroll;
+    //float: left;
+}
+.upcomingPaymentView::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE and Edge */
+  .upcomingPaymentView, tbody {
+    -ms-overflow-style: none;
+  }
+
+  tbody::-webkit-scrollbar {
+    display: none;
+  }
+
+.paymentView{
+    height: 130px;
+    width:31%;
+    border-radius: 3px;
+    position: absolute;
+}
+
+.upcomingPaymentLogo{
+    position: absolute;
+    top:30px;
+    left: 25px;
+    height: 28px;
+}
+
+.upcomingPaymentName{
+    position: absolute;
+    top:20px;
+    left: 85px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.paymentType{
+    position: absolute;
+    top:37px;
+    left: 85px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.paymentCharge{
+    position: absolute;
+    top:64px;
+    left: 85px;
+    font-size: 12px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.paymentDate{
+    position: absolute;
+    top:80px;
+    left: 85px;
+    font-size: 10px;
+    color: #ffffff;
+}
+
+.paymentMore{
+    position: absolute;
+    top: 34px;
+    right: 20px;
+    height: 5px;
+    width: 20px;
+    background-color: #ffffff;
+}
+.paynow{
+    position: absolute;
+    top:75px;
+    right: 20px;
+    font-size: 11px;
+    color: #ffffff;
+    border: solid 1px #ffffff;
+    border-radius: 15px;
+    height: 30px;
+    width: 84px;
+    background-color: transparent;
+}

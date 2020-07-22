@@ -1,0 +1,34 @@
+<div class="loanView">
+    <div class="loanHeaderView" [ngStyle]="{'background-image':'url(/assets/blue_bg.png)'}">
+      <p class="loanTxt">APPLY FOR LOAN</p>
+      <p class="loanDetail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+        Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+        galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="loanBody">
+      <div class="loanContentHeader">
+        <p class="contentLoanTxt">SHOT TERM LOAN</p>
+      </div>
+      <div class="loanContentBody">
+        <p class="customizeTxt">Customize your loan with ranges below</p>
+  
+        <p class="loanAmtTxt">Loan Amount </p>
+        <ng5-slider class="loanAmtRange" [(value)]="loanInitalAmount" [options]="loanAmountOptions"></ng5-slider>
+        <!-- <input class="loanAmt" type="number" min="{{loanAmountOptions.floor}}" max="{{loanAmountOptions.ceil}}"
+          [(ngModel)]="loanInitalAmount"> -->
+  
+        <p class="loanPeriodTxt" >Term <span> (in Years)</span></p>
+        <ng5-slider class="loanPeriodRange" [(value)]="loanInitalPeriod" [options]="loanPeriodOptions"></ng5-slider>
+  
+        <!--<p class="estFeeTxt" >Establishment Fee <span> (%)</span></p>
+        <ng5-slider class="estFeeRange" [(value)]="estFeePeriod" [options]="estFeeOptions"></ng5-slider>
+  
+        <p class="monthlyFeeTxt" >Monthly Fee <span> (%)</span></p>
+        <ng5-slider class="monthlyFeeRange" [(value)]="monthlyFeePeriod" [options]="monthlyFeeOptions"></ng5-slider>-->
+  
+        <button class="loanBackBtn" (click)="BackToLoan()">BACK</button>
+        <button class="applyLoanBtn" *ngIf="!isLoading" (click)="ApplyLoan()">APPLY</button>
+        <div class="loader" *ngIf="isLoading"></div>
+      </div>
+    </div>
+  </div>

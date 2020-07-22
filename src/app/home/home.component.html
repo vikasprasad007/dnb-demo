@@ -1,0 +1,70 @@
+<div class="homepage">
+    <div class="home-header">
+        <img class="cmpLogo" [src]="logoUrl" />
+        <div class="setting-view">
+            <a class="service" href="">SERVICE</a>
+            <a class="contact" href="">CONTACT</a>
+            <a class="inbox" href="">INBOX</a>
+            <a class="settings" href="">SETTINGS</a>
+            <a class="logout" style="color: #ffffff;" href="" (click)="Logout()">LOG OUT</a>
+        </div>
+    </div>
+    <div class="home-listview">
+        <ul class="home-undorederedlist">
+            <li><a style="cursor: pointer;" [ngClass]="(selectedItem == 'dashboard') ? 'active' : ''"
+                    (click)="selectedItem = 'dashboard';updateCurrentComponent('dashboard');">DASHBOARD</a></li>
+            <li><a style="cursor: pointer;" [ngClass]="(selectedItem == 'loan') ? 'active' : ''"
+                    (click)="selectedItem = 'loan';updateCurrentComponent('loan');">LOANS</a></li>
+            <li><a style="cursor: pointer;" [ngClass]="(selectedItem == 'transfer') ? 'active' : ''"
+                    (click)="selectedItem = 'transfer';updateCurrentComponent('transfer');">TRANSFERS</a></li>
+            <li><a style="cursor: pointer;" [ngClass]="(selectedItem == 'exchange') ? 'active' : ''"
+                    (click)="selectedItem = 'exchange';updateCurrentComponent('exchange');">EXCHANGE</a></li>
+            <li><a style="cursor: pointer;" [ngClass]="(selectedItem == 'product') ? 'active' : ''"
+                    (click)="selectedItem = 'product';updateCurrentComponent('product');">MY PRODUCTS</a></li>
+            <li><a style="cursor: pointer;" [ngClass]="(selectedItem == 'history') ? 'active' : ''"
+                    (click)="selectedItem = 'history';updateCurrentComponent('history');">HISTORY</a></li>
+            <li><a style="cursor: pointer;" [ngClass]="(selectedItem == 'investment') ? 'active' : ''"
+                    (click)="selectedItem = 'investment';updateCurrentComponent('investment');">INVESTMENT FUNDS</a>
+            </li>
+        </ul>
+
+    </div>
+    <div class="home-components">
+        <!-- Dashboard block -->
+        <div *ngIf="selectedItem == 'dashboard'">
+            <app-dashboard (triggerLoan)="openLoanView($event)"></app-dashboard>
+        </div>
+        <!-- Loans block -->
+        <div *ngIf="selectedItem == 'loan'">
+            <app-loan (triggerLoan)="openLoanView($event)"></app-loan>
+        </div>
+        <!-- Apply Loans block -->
+        <div *ngIf="selectedItem == 'loanapply'">
+            <app-loan-apply (triggerLoan)="openLoanView($event)"></app-loan-apply>
+        </div>
+        <!-- Transfers block -->
+        <div *ngIf="selectedItem == 'transfer'">
+            <app-transfer (triggerPayee)="openPayeeView($event)"></app-transfer>
+        </div>
+        <!-- Payee block -->
+        <div *ngIf="selectedItem == 'payee'">
+            <app-payee (triggerPayee)="openPayeeView($event)"></app-payee>
+        </div>
+        <!-- Exchanges block -->
+        <div *ngIf="selectedItem == 'exchange'">
+            <app-exchange></app-exchange>
+        </div>
+        <!-- My Products block -->
+        <div *ngIf="selectedItem == 'product'">
+            <app-product></app-product>
+        </div>
+        <!-- History block -->
+        <div *ngIf="selectedItem == 'history'">
+            <app-history></app-history>
+        </div>
+        <!-- Investment Funds block -->
+        <div *ngIf="selectedItem == 'investment'">
+            <app-investment></app-investment>
+        </div>
+    </div>
+</div>

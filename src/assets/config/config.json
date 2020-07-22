@@ -1,0 +1,5 @@
+{
+    "server1": "http://payee-dnb.eu-gb.mybluemix.net/api/payee",
+    "server2": "http://dnb-transaction-cpfa-dnb.ocp-app-mod-055be62028fec1a956793dedf3faa04a-0001.us-east.containers.appdomain.cloud/api/v1",
+    "server3": "http://dnb.eu-gb.mybluemix.net/api/v1/accounts"
+}

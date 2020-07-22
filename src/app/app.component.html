@@ -1,0 +1,4 @@
+<app-home *ngIf="isAlreadyLoggedId == true" (triggerHome)="isAlreadyLoggedId = false;"></app-home>
+<app-login *ngIf="isAlreadyLoggedId == false" (triggerHome)="isAlreadyLoggedId = true;"></app-login>
+
+<router-outlet></router-outlet>

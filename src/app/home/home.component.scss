@@ -1,0 +1,102 @@
+.homepage {
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    //height: 100%;
+    overflow-x: hidden;
+    background-color: #f1f2f7;
+}
+
+.home-header {
+    position: relative;
+    top:0;
+    right: 0;
+    left: 0;
+    height: 50px;
+}
+
+.cmpLogo{
+    position: relative;
+    top:5px;
+    left: 5%;
+    height: 35px;
+}
+
+.setting-view {
+    position: absolute;
+    top:4px;
+    right: 5%;
+    height: 42px;
+    width: 435px;
+    border-radius: 2px;
+    background-color: #ffffff;
+    float: left;
+}
+
+.setting-view > a{
+    font-size: 11px;
+    font-weight: bold;
+    margin: 15px;
+    position: relative;
+    left: 5px;
+    top: 10px;
+    color: #000000;
+    text-decoration: none;
+}
+
+.logout {
+    border-radius: 2px;
+    background-color: #e22121;
+    padding: 8px 20px;
+}
+
+.home-listview {
+    position: relative;
+    top:-15px;
+    right: 0;
+    left: 0;
+    height: 70px;
+    background-color: #2409a0;
+    
+}
+
+.home-undorederedlist{
+    position: relative;
+    //left: 5%;
+    top: 2px;
+    list-style-type: none;
+    margin-left: 5%;
+    padding: 0;
+    overflow: hidden;
+}
+.home-undorederedlist > li {
+    float: left;
+  }
+  
+  .home-undorederedlist > li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 12px;
+  }
+  
+  .home-undorederedlist > li a:hover:not(.active) {
+    background-color: #3A3CB8;
+  }
+  
+  .active {
+    border-bottom: solid 4px #e22121;
+  }
+
+  .home-components {
+    position: relative;
+    top:-15px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: white;
+}

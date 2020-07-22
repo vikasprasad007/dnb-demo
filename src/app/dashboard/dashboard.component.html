@@ -1,0 +1,264 @@
+<div class="dashboardParentView">
+    <div class="accountView">
+        <div class="accountBalanceView">
+            <p class="accHolderName">Welcome {{accountHolderName}}</p>
+            <p class="accNumberTxt">ACCOUNT NUMBER</p>
+            <p class="accountNumberVal">{{accountNumber}}</p>
+        </div>
+        <div class="creditView">
+            <p class="accBalanceTxt">ACCOUNT BALANCE</p>
+            <p class="accBalanceAmt">{{accountBallance}} USD</p>
+            <p class="creditTxt">LAST TRANSACTION</p>
+            <p class="creditAmt">{{lastTransactionAmount}} USD</p>
+        </div>
+        <div class="atmView">
+            <ul class="atm-undorederedlist">
+                <li><a href="">ATM AND FEES</a></li>
+                <li><a href="">RETURNS FOR BILLS</a></li>
+                <li><a href="">AUTOMATIC SAVING</a></li>
+                <!-- <li><a class="trip" href="" style="color:#ffffff">TRIP ABROAD</a></li> -->
+                <li><a href=""><img [src]="atmMoreUrl" height="32px" width="32px"></a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="visaCardView">
+        <img class="visaCardImage" [src]="cardUrl">
+        <p class="accountNumber">xxxx xxxx xxxx 3005</p>
+        <p class="cardHolderNameTxt">CARD HOLDER</p>
+        <p class="cardHolderName">GOMTI PRABHA</p>
+        <p class="expiryTxt">EXPIRES</p>
+        <p class="expiry">12/24</p>
+    </div>
+    <div class="sendMoneyView">
+        <p class="sendMoneyTxt">SEND MONEY</p>
+        <div class="receiverViewParent" *ngIf="receiverLength<8">
+            <div class="receiverView" *ngFor="let n of [1,2,3,4,5,6,7]">
+                <img class="receiverImg" [src]="receiverImage">
+            </div>
+        </div>
+        <div class="receiverViewParent" *ngIf="receiverLength>7">
+            <div class="receiverView" *ngFor="let n of [1,2,3,4,5,6,7]">
+                <img class="receiverImg" [src]="receiverImage">
+            </div>
+            <div class="receiverView">
+                <a class="receiverImg" href=""
+                    style="text-decoration: none;color:#ffffff;background-color:#e22121;padding: 6px;position: relative;top: -10px;">+{{receiverLength - 7}}</a>
+            </div>
+        </div>
+    </div>
+    <div class="exchangeView">
+        <p class="sendMoneyTxt">EXCHANGE</p>
+
+        <div class="exchangeFromView">
+            <select>
+                <option value="0" style="background-image:url(/assets/Layer29.png);">Euro - EUR </option>
+                <option value="1" style="background-image:url(/assets/Layer29.png);">Rupee - INR</option>
+                <option value="2" style="background-image:url(/assets/Layer29.png);">Tether - USDT</option>
+            </select>
+        </div>
+
+        <input class="exchangeFromValue" type="number">
+
+        <p class="youget">You get</p>
+
+        <div class="exchangeYourView">
+            <select>
+                <option value="0">Euro - EUR </option>
+                <option value="1">Rupee - INR</option>
+                <option value="2">Tether - USDT</option>
+            </select>
+        </div>
+
+        <input class="exchangeYourValue" disabled="true" type="number">
+
+        <p class="currentExchangeRateTxt">Current exchange rate</p>
+        <p class="currentExchangeRate">1 USDT = $ 34897</p>
+        <p class="serviceTaxTxt">Service tax included</p>
+        <p class="serviceTax">$ 892374</p>
+
+        <button class="exchangebutton" (click)="Exchange()">Exchange</button>
+
+    </div>
+    <div class="summaryView">
+        <p class="sendMoneyTxt">SUMMARY OF THE INVOICE</p>
+        <div class="summaryOption">
+            <select (change)="onSelectionChange($event.target.value)">
+                <option value="m">MONTH</option>
+                <option value="y">YEAR</option>
+                <option value="d">DAY</option>
+            </select>
+        </div>
+        <div class="summaryChartView">
+            <div>
+                <ngx-charts-pie-chart height="200px" width="200px" class="chart" [view]="view" [scheme]="colorScheme"
+                    [results]="single" [gradient]="gradient" [legend]="showLegend"
+                    [arcWidth]=0.1 [animations]=false [labels]="showLabels" [doughnut]="isDoughnut"
+                    [tooltipDisabled]=true>
+                </ngx-charts-pie-chart>
+                <p class="expensesTxt">Your Expenses</p>
+                <p class="expenses">{{expensesAmount}} USD</p>
+            </div>
+        </div>
+        <a class="showAllSummery" href="">SHOW ALL</a>
+    </div>
+    <div class="myFavouriteView">
+        <p class="sendMoneyTxt">MY FAVORITE</p>
+
+        <img class="electricityImage" [src]="electricityImageUrl">
+        <span class="electricityValue">$50</span>
+        <span class="electricity">Electricity</span>
+
+        <img class="internetImage" [src]="internetImageUrl">
+        <span class="internetValue">$40</span>
+        <span class="internet">Internet</span>
+
+        <img class="insuranceImage" [src]="insuranceImageUrl">
+        <span class="insuranceValue">$35</span>
+        <span class="insurance">Insurance</span>
+
+        <img class="waterImage" [src]="waterImageUrl">
+        <span class="waterValue">$45</span>
+        <span class="water">Water</span>
+    </div>
+    <div class="accStatementView">
+        <p class="sendMoneyTxt">ACCOUNT STATEMENT</p>
+        <a class="accStstementMore" href="">See More</a>
+
+        <div class="accStatementSwitch">
+            <div class="accStatementSwitchAccount"
+                [ngStyle]="{'color': (accStatementSelect == 'account') ? '#ffb3b3' : '#000000','background-color': (accStatementSelect == 'account') ? '#FCE4F6' : '#ffffff'}"
+                (click)="accStatementSelect = 'account'"><span>Account</span></div>
+            <div class="accStatementSwitchCredit"
+                [ngStyle]="{'color': (accStatementSelect == 'credit') ? '#ffb3b3' : '#000000','background-color': (accStatementSelect == 'credit') ? '#FCE4F6' : '#ffffff'}"
+                (click)="accStatementSelect = 'credit'"><span>Credit</span></div>
+        </div>
+
+        <img class="accStatementImage" [src]="accStatementImageUrl">
+        <span class="accStatementValue">Transaction Statement Jun'19</span>
+        <span class="accStatement">Jun 1 - Jun 31 2019</span>
+        <img class="statementDownloadImage" [src]="statementDownloadImageUrl">
+    </div>
+
+    <div class="mobileBankingView">
+        <p class="sendMoneyTxt" style="color:#ffffff;">MOBILE BANKING</p>
+        <p class="mobileBankingTxt">You can trade your favorite cryptocurrncies at no extra charge. Th entire stock
+            exchange is in your hands,multiply your savings</p>
+        <a class="mobileBankingMore" href="">SEE MORE</a>
+        <img class="mobileBankingMoreImage" [src]="mobileBankingImageUrl">
+    </div>
+
+    <div class="cloudBankingView">
+        <p class="sendMoneyTxt" style="color:#ffffff;">CLOUD BANKING</p>
+        <p class="cloudBankingTxt">The first banking completely in the cloud.</p>
+        <a class="mobileBankingMore" href="">SEE MORE</a>
+        <img class="cloudBankingMoreImage" [src]="cloudBankingImageUrl">
+    </div>
+
+    <div class="loanView">
+        <img class="ongoingLoanImg" [src]="ongoingLoanImg">
+        <p class="ongoingLoanCount">{{ongoingLoanCount}}</p>
+        <p class="ongoingLoanTxt">ONGOING LOAN</p>
+        <div class="topSeperator"></div>
+
+        <img class="approvalLoanImg" [src]="approvalLoanImg">
+        <p class="approvalLoanCount">{{approvalLoanCount}}</p>
+        <p class="approvalLoanTxt">WAITING FOR APPROVAL</p>
+        <div class="secondSeperator"></div>
+
+        <img class="upcomingEmiImg" [src]="upcomingEmiImg">
+        <p class="upcomingEmiCount">{{upcomingEmiCount | date:'mediumDate'}}</p>
+        <p class="upcomingEmiTxt">UPCOMING EMI DATE</p>
+        <div class="thirdSeperator"></div>
+
+        <p class="applyNewLoanTxt">LOOKING FOR NEW LOAN</p>
+        <button class="applyNewLoanbutton" (click)="ApplyNewLoan()">APPLY NOW</button>
+    </div>
+
+    <div class="transactionView">
+        <p class="sendMoneyTxt">RECENT TRANSACTION</p>
+        <div class="dateFilterView">
+            <img class="" [src]="dateFilterLogo">
+            <input class="dateTxt" type="text" ngxDaterangepickerMd [(ngModel)]="selected" placeholder="Choose date" />
+        </div>
+        <div class="typeFilterView">
+            <img class="" [src]="typeFilterLogo">
+            <span class="">TYPE</span>
+            <select [(ngModel)]="typeFilter" name="type">
+                <option value="">Type All</option>
+                <option value="Draft">Draft</option>
+                <option value="Pending">Pending</option>
+                <option value="Complete">Complete</option>
+            </select>
+        </div>
+        <input class="transactionsearch" [(ngModel)]="searchText" tnserch placeholder="Search" type="search">
+        <table class="transactionTable" tnserch>
+            <thead>
+                <tr>
+                    <td style="width:15%;">
+                        ID
+                    </td>
+                    <td style="width:20%;" style="cursor: pointer;" (click)="sort('transactionDateTime')">
+                        <img [src]="arrowImg"
+                            style="position: relative;top: 2px;left: -4px;height: 10px;width: 6px;">
+                        Date
+                    </td>
+                    <td style="width:17%;">
+                        Category
+                    </td>
+                    <td style="width:23%;">
+                        Payment Details
+                    </td>
+                    <td style="width:15%;">
+                        Amount (USD)
+                    </td>
+                    <td style="width:10%;">
+                        Status
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr
+                    *ngFor="let item of transactionTada | transactionFilter: searchText | transactionFilter: typeFilter | transactionDateFilter: selected">
+                    <td style="width:15%;">
+                        {{item.transactionId}}
+                    </td>
+                    <td style="width:20%;">
+                        {{item.transactionDateTime | date:'short'}}
+                    </td>
+                    <td style="width:17%;">
+                        {{item.transactionType}}
+                    </td>
+                    <td style="width:23%;">
+                        {{item.transactionDesc}}
+                    </td>
+                    <td style="width:15%;">
+                        {{item.amount}}
+                    </td>
+                    <td style="width:10%;">
+                        {{item.status}}
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="upcomingView">
+        <a class="upcomingTxt">UPCOMING PAYMENTS</a>
+        <a class="upcomingMore" href="">SHOW ALL</a>
+        <div class="upcomingPaymentView">
+
+            <div *ngFor="let n of upcomingPayment; let i = index;">
+                <div class="paymentView" [ngStyle]="{'background-color':n.bgcolor, left:(i*34) + '%'}">
+                    <img class="upcomingPaymentLogo" [src]="n.logo">
+                    <p class="upcomingPaymentName">{{n.name}}</p>
+                    <p class="paymentType">{{n.type}}</p>
+                    <p class="paymentCharge">{{n.charges}}</p>
+                    <p class="paymentDate">{{n.time}}</p>
+                    <!-- <img class="paymentMore" [src]="payMoreImageUrl"> -->
+                    <button class="paynow" (click)="PayNow()">PAY NOW</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

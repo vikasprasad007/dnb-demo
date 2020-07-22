@@ -1,0 +1,56 @@
+<div class="payeeView" *ngIf="requestStatusSent == false">
+    <div class="payeeHeaderView" [ngStyle]="{'background-image':'url(/assets/blue_bg.png)'}">
+        <p class="payeeTxt">ADD PAYEE</p>
+        <p class="payeeDetail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="payeeBody">
+        <div class="payeeContentHeader">
+            <p class="contentPayeeTxt">ADD PAYEE</p>
+        </div>
+        <div class="payeeContentBody">
+            <p class="payeeAccountNameTxt">Payee Account Name</p>
+            <input type="text" #payeeName="ngModel" required minlength="1" [(ngModel)]="payeeDetail.name"
+                class="payeeAccountName">
+
+            <p class="payeeNickNameTxt">Payee Nick Name</p>
+            <input type="text" #confirmPayeeName="ngModel" required minlength="1" [(ngModel)]="payeeDetail.nickName"
+                class="payeeNickName">
+
+            <p class="accountNumberTxt">Account Number</p>
+            <input type="number" [(ngModel)]="payeeDetail.account" onKeyPress="if(this.value.length==9) return false;"
+                class="accountNumber">
+
+            <p class="confirmAccountNumberTxt">Confirm Account Number</p>
+            <input type="number"
+                [ngStyle]="{'border-color': (payeeDetail.account == payeeDetail.confirmAccount) ? '#e7e7e7' : 'red'}"
+                [(ngModel)]="payeeDetail.confirmAccount" onKeyPress="if(this.value.length==9) return false;"
+                class="confirmAccountNumber" (input)="CheckAccount()">
+
+            <p class="ifscNoTxt">Enter IFSC No.</p>
+            <input type="text" maxlength="11" [(ngModel)]="payeeDetail.ifsc" class="ifscNumber">
+
+            <p class="mobileNumberTxt">Enter Mobile No.</p>
+            <input type="number" [(ngModel)]="payeeDetail.mobile" pattern="/^-?\d+\.?\d*$/"
+                onKeyPress="if(this.value.length==10) return false;" class="mobileNumber">
+
+            <p class="errorMsg" *ngIf="errorMsgTxt != ''">{{errorMsgTxt}}</p>
+
+            <p class="disclamer">"You will be able to transfer the fund once the payee is activated. It takes 30 mins to
+                activate the payee."</p>
+
+            <button class="backBtn" (click)="backFromPayee()">BACK</button>
+            <button class="addPayeeBtn" [ngStyle]="{'background-color': (payeeDetail.name != '' && payeeDetail.nickName != '' && payeeDetail.ifsc != '' && payeeDetail.mobile && payeeDetail.account && errorMsgTxt == '') ? '#3CD5A8' : '#e7e7e7', 'cursor': (payeeDetail.name != '' && payeeDetail.nickName != '' && payeeDetail.ifsc != '' && payeeDetail.mobile && payeeDetail.account && errorMsgTxt == '') ? 'pointer' : 'auto'}" *ngIf="!isLoading" (click)="addPayee()">ADD PAYEE</button>
+            <div class="loader" *ngIf="isLoading"></div>
+        </div>
+    </div>
+</div>
+<div class="payeeSuccessView" *ngIf="requestStatusSent == true">
+    <div class="successView">
+        <img [src]="successImageUrl" class="successImage">
+        <p class="successMsg">Your add payee request sent successfully!</p>
+        <p class="successDetailMsg">Process will take time for payee account activation..</p>
+        <button class="okBtn" (click)="backFromPayee()">OK</button>
+    </div>
+</div>

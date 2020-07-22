@@ -1,0 +1,122 @@
+<div class="transferView">
+    <div class="transferHeaderView" [ngStyle]="{'background-image':'url(/assets/blue_bg.png)'}">
+        <marquee class="accountActivateView" direction="right" *ngIf="activationMsg != ''">
+            {{activationMsg}}
+          </marquee>
+        <p class="fundTransferTxt">FUND TRANSFER</p>
+        <p class="fundTransferDetail">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+            Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+            galley of type and scrambled it to make a type specimen book.</p>
+    </div>
+    <div class="transferBody">
+        <div class="transferContentHeader">
+            <p class="contentfundTransferTxt">FUND TRANSFER</p>
+            <button class="contentfundTransferBtn" (click)="addPayee()">ADD PAYEE</button>
+        </div>
+        <div class="transferContentBody">
+            <p class="amountTransferTxt">Amount</p>
+            <input type="number" class="transferAccountNumber" [(ngModel)]="fundTransferDetail.amount">
+            <select disabled="true" class="transferSelect">
+                <option value="0">USD</option>
+                <option value="1">INR</option>
+                <option value="2">EUR</option>
+            </select>
+            <p class="selectPayeeTxt">Select Payee</p>
+            <select class="payeeSelect" [(ngModel)]="fundTransferDetail.payeeAccount">
+                <option [ngValue]="null">Please select payee</option>
+                <option *ngFor="let payee of payeeList" [ngValue]="payee" [disabled]="payee.status === 'pending'">
+                    {{ payee.name }} {{ payee.status === 'pending' ? '(Not Active)' : '' }}
+            </select>
+
+            <p class="transferDescTxt">Fund Transfer Description</p>
+            <input type="text" class="transferDesc" [(ngModel)]="fundTransferDetail.desc">
+
+            <div class="bankTransferType" (click)="transferTypeSelected=0"
+                [ngStyle]="{'border-color':transferTypeSelected == 0 ? '#3169D7' : '#e7e7e7'}">
+                <input type="radio" [checked]="transferTypeSelected == 0 ? true : false" class="radioType">
+                <img [src]="bankTransferImageUrl" class="iconType">
+                <p class="nameType">Bank Transfer</p>
+                <p class="processTimeType">2-5 Business days</p>
+            </div>
+
+            <div class="masterCardTransferType" (click)="transferTypeSelected=0"
+                [ngStyle]="{'border-color':transferTypeSelected == 1 ? '#3169D7' : '#e7e7e7'}">
+                <input type="radio" disabled [checked]="transferTypeSelected == 1 ? true : false" class="radioType">
+                <img [src]="mcardTransferImageUrl" class="iconType">
+                <p class="nameType">TransferMaster Card</p>
+                <p class="processTimeType">Instant</p>
+            </div>
+
+            <div class="accountTransferType" (click)="transferTypeSelected=0"
+                [ngStyle]="{'border-color':transferTypeSelected == 2 ? '#3169D7' : '#e7e7e7'}">
+                <input type="radio" disabled [checked]="transferTypeSelected == 2 ? true : false" class="radioType">
+                <img [src]="accTransferImageUrl" class="iconType">
+                <p class="nameType">TransferAccount Bank</p>
+                <p class="processTimeType">Instant</p>
+            </div>
+
+            <div class="debcredTransferType" (click)="transferTypeSelected=0"
+                [ngStyle]="{'border-color':transferTypeSelected == 3 ? '#3169D7' : '#e7e7e7'}">
+                <input type="radio" disabled [checked]="transferTypeSelected == 3 ? true : false" class="radioType">
+                <img [src]="dcardTransferImageUrl" class="iconType">
+                <p class="nameType">Debit / Credit Card</p>
+                <p class="processTimeType">1-3 Business days</p>
+            </div>
+
+            <button class="continuefundTransferBtn" [ngStyle]="{'background-color':(this.fundTransferDetail.amount && this.fundTransferDetail.payeeAccount) ? '#3169D7' : '#e7e7e7', 'cursor':(this.fundTransferDetail.amount && this.fundTransferDetail.payeeAccount) ? 'pointer' : 'auto'}" *ngIf="!isLoading" (click)="FundTransfer()">Continue</button>
+            <div class="loader" *ngIf="isLoading"></div>
+
+            <img class="transferRepresent" [src]="transferRepresentUrl">
+
+            <table class="transferListTable">
+                <thead>
+                    <tr>
+                        <td style="width:3%;"></td>
+                        <td style="width:10%;">
+                            Trans. ID
+                        </td>
+                        <td style="width:18%;">
+                            Payee Name
+                        </td>
+                        <td style="width:18%;">
+                            Trans. Type
+                        </td>
+                        <td style="width:18%;">
+                            Amount (USD)
+                        </td>
+                        <td style="width:15%;">
+                            Status
+                        </td>
+                        <td style="width:18%;" style="cursor: pointer;" (click)="sort('transactionDatetime')">
+                            <img [src]="arrowImg"
+                                style="position: relative;top: 2px;left: -4px;height: 10px;width: 6px;">Date
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of transferListData">
+                        <td style="width:3%;"></td>
+                        <td style="width:10%;">
+                            {{item.id}}
+                        </td>
+                        <td style="width:18%;">
+                            {{item.txName}}
+                        </td>
+                        <td style="width:18%;">
+                            {{item.desc}}
+                        </td>
+                        <td style="width:18%;">
+                            {{item.amount}}
+                        </td>
+                        <td style="width:15%;">
+                            {{item.status}}
+                        </td>
+                        <td style="width:18%;">
+                            {{item.transactionDatetime | date:'short'}}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

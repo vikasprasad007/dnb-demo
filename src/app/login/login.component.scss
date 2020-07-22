@@ -1,0 +1,164 @@
+.loginpage {
+    position: absolute;
+    top:0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-image: linear-gradient(135deg, #E6E6FA, #1f304a);
+}
+
+.logincontent{
+    position: relative;
+    top:10%;
+    //left: 10%;
+    //height: 60%;
+    //width: 80%;
+    background-color: white;
+    
+}
+
+.logindetail{
+    position: relative;
+    left: 0;
+    float: left;
+}
+
+.viewImage{
+    position: relative;
+    left: 0;
+    float: left;
+}
+
+.loginLogo{
+    position: absolute;
+    top: 50px;
+    left: 50px;
+    height: 40px;
+   // width: 270px;
+}
+
+.signIn{
+    position: absolute;
+    top: 140px;
+    left: 50px;
+    height: 30px;
+    font-size: 17px;
+    color: #253667;
+}
+.credentials{
+    position: absolute;
+    top: 167px;
+    left: 50px;
+    height: 30px;
+    font-size: 12px;
+    color: #889BB2;
+}
+.email{
+    position: absolute;
+    top: 200px;
+    left: 50px;
+    /* height: 30px; */
+    font-size: 12px;
+    color: #889BB2;
+}
+.emailText{
+    position: absolute;
+    top: 228px;
+    left: 50px;
+    height: 26px;
+    width: 198px;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 0px 10px;
+    border: solid 1px #e7e7e7;
+    color: #889BB2;
+}
+.password{
+    position: absolute;
+    top: 260px;
+    left: 50px;
+    /* height: 30px; */
+    font-size: 12px;
+    color: #889BB2;
+}
+.forgot{
+    position: absolute;
+    top: 270px;
+    left: 185px;
+    /* height: 30px; */
+    font-size: 12px;
+    color: #889BB2;
+}
+.passwordText{
+    position: absolute;
+    top: 288px;
+    left: 50px;
+    height: 26px;
+    width: 198px;
+    font-size: 12px;
+    border-radius: 4px;
+    padding: 0px 10px;
+    border: solid 1px #e7e7e7;
+    color: #889BB2;
+}
+
+.errorMsg{
+    position: absolute;
+    top: 386px;
+    width: 200px;
+    text-align: center;
+    left: 50px;
+    font-size: 12px;
+    color: red;
+    font-style: italic;
+}
+
+.signinbutton{
+    position: absolute;
+    top: 332px;
+    left: 50px;
+    height: 35px;
+    background-color: #253667;
+    width: 218px;
+    border-radius: 4px;
+    color: #ffffff;
+    border-color: transparent;
+    cursor: pointer;
+}
+
+.loader {
+    position: absolute;
+    top: 332px;
+    left: 135px;
+    border: 3px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 3px solid #3498db;
+    width: 30px;
+    height: 30px;
+    -webkit-animation: spin 2s linear infinite; /* Safari */
+    animation: spin 2s linear infinite;
+  }
+  
+  /* Safari */
+  @-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(0deg); }
+    100% { -webkit-transform: rotate(360deg); }
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+.sighup{
+    position: absolute;
+    top: 366px;
+    left: 94px;
+    height: 30px;
+    font-size: 12px;
+    color: #889BB2;
+}
+.signupBtn{
+    font-size: 13px;
+    color: #23B2E7;
+}
